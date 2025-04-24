@@ -1,0 +1,6 @@
+node_modules
+.ignored
+output
+
+**/.DS_Store
+.envrc
