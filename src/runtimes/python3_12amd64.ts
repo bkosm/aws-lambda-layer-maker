@@ -26,7 +26,7 @@ export default {
 
     console.log("Installing dependencies in Docker container...");
     await $`docker run --rm --platform linux/amd64 -v ${process.cwd()}/${outputDir}:/output ${dockerImage} \
-      bash -c "pip install --platform manylinux2014_aarch64  --only-binary=:all: --implementation cp --python-version 3.12 -r /output/requirements.txt --target /output/python --no-cache-dir"`;
+      bash -c "pip install --platform manylinux2014_x86_64  --only-binary=:all: --implementation cp --python-version 3.12 -r /output/requirements.txt --target /output/python --no-cache-dir"`;
 
     console.log("Creating zip file...");
     await $`cd ${outputDir} && zip -r ${zipName} python requirements.txt`;
